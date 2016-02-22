@@ -1,0 +1,28 @@
+PODS:
+  - EVReflection (2.17.0)
+  - ReactiveCocoa (4.0.1):
+    - ReactiveCocoa/UI (= 4.0.1)
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/Core (4.0.1):
+    - ReactiveCocoa/no-arc
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/no-arc (4.0.1):
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/UI (4.0.1):
+    - ReactiveCocoa/Core
+    - Result (~> 1.0.2)
+  - Result (1.0.2)
+  - XMLDictionary (1.4)
+
+DEPENDENCIES:
+  - EVReflection
+  - ReactiveCocoa (~> 4.0.1)
+  - XMLDictionary
+
+SPEC CHECKSUMS:
+  EVReflection: 46ecf3f36076a5273443be4448230f2e1e2c8ea5
+  ReactiveCocoa: f7011630aee4deeb16352fcb1b50d6bde9db4f90
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
+
+COCOAPODS: 0.38.2
