@@ -64,19 +64,22 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+        NSLog("Widget performs update ...")
+        
         FHPI(department: "itm", year: 2015).timeTable(5, filter: ["G1"])
         .startWithSignal { (signal, _) in
             signal.observeNext { timeTable in
-                if self.timeTable == timeTable {
-                    return completionHandler(.NoData)
-                }
+                NSLog("FH timetable downloaded")
                 
+                let result: NCUpdateResult = self.timeTable == timeTable ? .NoData : .NewData
                 self.timeTable = timeTable
                 self.error = nil
-                completionHandler(.NewData)
+                completionHandler(result)
             }
             
             signal.observeFailed { error in
+                NSLog("Timetable couldn't be downloaded, error \(error)")
+                
                 self.timeTable = nil
                 self.error = error
                 completionHandler(.Failed)
